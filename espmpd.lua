@@ -21,12 +21,6 @@ function buttonHandler()
   if button_state == 1 and button_state_new == 0 then
     button_time = tmr.time()
     mpdCommand("pause")
-  elseif button_state == 0 and button_state_new == 1 then
-    button_time_new = tmr.time()
-    if tmr.time() > (button_time + 2) then
-      tmr.stop(1)
-      print("BUTTON DISABLED")
-    end
   end
   button_state = button_state_new
 end
